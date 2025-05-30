@@ -64,7 +64,7 @@ export class ListaJuegosComponent implements OnInit {
             juego.categoria.toLowerCase().includes(filtros.busqueda.toLowerCase())
           );
         }
-        
+      
         // Filtro por categoría
         if (filtros.categoria) {
           resultado = resultado.filter(juego =>
