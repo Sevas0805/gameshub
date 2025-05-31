@@ -1,1 +1,34 @@
-<p>estadisticas works!</p>
+<div class="estadisticas">
+  <h2>Estadísticas de Juegos</h2>
+
+  <p>Total de juegos: {{ totalJuegos }}</p>
+  <p>Juegos gratuitos: {{ juegosGratis }}</p>
+  <p>Juegos de pago: {{ juegosPago }}</p>
+
+  <p *ngIf="mejorJuego">
+    Mejor juego: {{ mejorJuego.nombre }} (Rating: {{ mejorJuego.rating | number:'1.1-2' }})
+  </p>
+
+  <p *ngIf="juegosPago > 0">
+    Promedio de precios: {{ promedioPrecio | currency:'USD' }}
+  </p>
+
+  <hr>
+
+  <h3>Filtrar por precio</h3>
+  <label>
+    Mínimo:
+    <input type="number" [(ngModel)]="precioMin" (input)="filtrarPorPrecio()" />
+  </label>
+  <label>
+    Máximo:
+    <input type="number" [(ngModel)]="precioMax" (input)="filtrarPorPrecio()" />
+  </label>
+
+  <ul>
+    <li *ngFor="let juego of juegosFiltrados">
+      {{ juego.nombre }} - {{ juego.precio | currency:'USD' }}
+    </li>
+  </ul>
+</div>
+

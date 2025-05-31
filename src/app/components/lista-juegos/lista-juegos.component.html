@@ -23,6 +23,23 @@
             </button>
           </div>
         </div>
+        
+<div class="ordenamiento mt-3">
+          <label for="orden" class="form-label text-light">Ordenar por:</label>
+         <!-- <select id="orden" class="form-select" [(ngModel)]="ordenSeleccionado" (change)="ordenarJuegos()">-->
+  
+            <select id="orden" class="form-control input-gaming" [(ngModel)]="ordenSeleccionado" (change)="ordenarJuegos()">
+
+            <option value="">-- Seleccionar --</option>
+            <option value="nombre-asc">Nombre: A-Z</option>
+            <option value="nombre-desc">Nombre: Z-A</option>
+            <option value="precio-asc">Precio: Menor a Mayor</option>
+            <option value="precio-desc">Precio: Mayor a Menor</option>
+            <option value="rating-desc">Rating: Mejor a Peor</option>
+          </select>
+        </div>
+        <!-- Fin del selector -->
+       
       </div>
       <div class="col-lg-4 d-flex align-items-end justify-content-lg-end">
         <div class="results-info">

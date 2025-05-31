@@ -21,6 +21,7 @@ export class JuegosDataService {
       });
   }
   
+
   obtenerJuegos(): Observable<Juego[]> {
     return this.juegos$;
   }
@@ -83,8 +84,6 @@ export class JuegosDataService {
       map(juegos => [...juegos]
         .sort((a, b) => new Date(b.fechaLanzamiento).getTime() - new Date(a.fechaLanzamiento).getTime())
         .slice(0, limite)
-
-        
       )
     );
   }
